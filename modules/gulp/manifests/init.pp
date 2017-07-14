@@ -1,4 +1,5 @@
 class gulp (
+	$config,
 	$path = "/vagrant/extensions/gulp",
 ) {
 	exec { 'install gulp':
