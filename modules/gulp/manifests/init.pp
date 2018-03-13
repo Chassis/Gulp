@@ -1,11 +1,12 @@
+# A Chassis extension to install Gulp on your Chassis box.
 class gulp (
 	$config,
-	$path = "/vagrant/extensions/gulp",
+	$path = '/vagrant/extensions/gulp',
 ) {
 	exec { 'install gulp':
-		path        => [ '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/' ],
-		command     => 'npm install -g gulp-cli',
-		require     => [ Class['nodejs'] ],
+		path    => [ '/bin/', '/sbin/', '/usr/bin/', '/usr/sbin/' ],
+		command => 'npm install -g gulp-cli',
+		require => [ Class['nodejs'] ],
 		unless  => 'which gulp',
 	}
 }
